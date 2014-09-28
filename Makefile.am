@@ -1,0 +1,11 @@
+AUTOMAKE_OPTIONS = 1.11
+ACLOCAL_AMFLAGS = -I m4
+
+LDADD = $(GLIB_LIBS) $(MODBUS_LIBS)
+AM_LDFLAGS = -g2
+AM_CPPFLAGS = -Wall $(GLIB_CFLAGS) $(MODBUS_CFLAGS) -g2 -ggdb
+bin_PROGRAMS = modbusd
+
+modbusd_SOURCES = modbus.c
+modbusd_LDADD = $(LDADD)
+
